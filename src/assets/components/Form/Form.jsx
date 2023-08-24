@@ -18,6 +18,8 @@ export const Form = ({ items, setItems }) => {
       { name: insert, completed: false, id: nanoid() },
     ]);
 
+    toast.success("Item registered successfully");
+
     setInsert("");
   };
 

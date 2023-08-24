@@ -1,7 +1,12 @@
 import { useState } from "react";
 
-export const SingleItem = ({ id, name, completed, removeItem }) => {
-  const [isChecked, setChecked] = useState(completed);
+export const SingleItem = ({
+  id,
+  name,
+  completed,
+  removeItem,
+  changeChecked,
+}) => {
 
   return (
     <article className="single-item">
@@ -9,12 +14,12 @@ export const SingleItem = ({ id, name, completed, removeItem }) => {
         type="checkbox"
         name=""
         id=""
-        checked={isChecked}
+        checked={completed}
         onChange={() => {
-          setChecked(!isChecked);
+          changeChecked(id);
         }}
       />
-      <p style={isChecked ? { textDecoration: "line-through" } : {}}>{name}</p>
+      <p style={completed ? { textDecoration: "line-through" } : {}}>{name}</p>
       <button
         className="remove-btn"
         onClick={() => {

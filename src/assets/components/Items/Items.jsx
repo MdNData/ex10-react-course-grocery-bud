@@ -1,6 +1,6 @@
 import { SingleItem } from "../SingleItem/SingleItem";
 
-export const Items = ({ items, removeItem }) => {
+export const Items = ({ items, removeItem, changeChecked }) => {
   return (
     <section className="items">
       {items.map((item) => {
@@ -11,6 +11,7 @@ export const Items = ({ items, removeItem }) => {
             name={item.name}
             completed={item.completed}
             removeItem={removeItem}
+            changeChecked={changeChecked}
           />
         );
       })}
